@@ -92,9 +92,3 @@ def getScrabbleWords(letters):
   for word in validWords[:]:
     validWords[validWords.index(word)] = [word, getWordValue(word)];
   return validWords;
-    
-##### Test Code #####
-
-storedWords = getScrabbleWords('JUHSINE');
-for word in storedWords:
-  print(word)
