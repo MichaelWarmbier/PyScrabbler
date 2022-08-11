@@ -75,7 +75,7 @@ def filterRepeats(wordList, letters):
   return wordList;
 
 ## Gets all possible words given provided letters
-def getWords(letters):
+def getScrabbleWords(letters):
   if (len(letters)< 7 or len(letters) > 15):
     raise Exception ('Letter count must be between seven and fifteen.')
     
@@ -95,6 +95,6 @@ def getWords(letters):
     
 ##### Test Code #####
 
-storedWords = getWords('JUHSINE');
+storedWords = getScrabbleWords('JUHSINE');
 for word in storedWords:
-  print(str(word) + '\n')
+  print(word)

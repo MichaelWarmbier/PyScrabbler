@@ -1,4 +1,4 @@
 /.config
 /venv
 .replit
-.replit.nix
+replit.nix
