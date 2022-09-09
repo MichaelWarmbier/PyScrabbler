@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyscrabbler"
-version = "1.0.1"
-description = "Provide a set of letters and retrieve a list of potential worsds and point values for Scrabble."
+version = "1.1.2"
+description = "Provide a set of letters and retrieve a list of potential words and point values for Scrabble."
 readme = "README.md"
 authors = [{ name = "Michael Warmbier", email = "business@michaelwarmbier.com" }]
 keywords = ["scrabble", "utility"]

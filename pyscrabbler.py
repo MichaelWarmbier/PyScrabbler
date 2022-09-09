@@ -4,10 +4,11 @@
 
 import re 
 import sys
+import os
 
 ##### Data Storage #####
 
-with open('Dictionary.txt') as file:
+with open(os.path.join(os.path.dirname(__file__), 'Dictionary.txt'), 'r') as file:
     wordList = file.read().splitlines()
 
 ## Constant letter point values
@@ -77,7 +78,7 @@ def filterRepeats(wordList, letters):
 
 ## Gets all possible words given provided letters
 def getScrabbleWords(letters):
-  if (len(letters)< 7 or len(letters) > 15):
+  if (len(letters) < 7 or len(letters) > 15):
     raise Exception ('Error: Letter count must be between seven and fifteen.');
     
   regex = re.compile('^([' + letters.upper() + '])*$');
