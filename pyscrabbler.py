@@ -3,10 +3,11 @@
 ### Libraries ###
 
 import re 
+import sys
 
 ##### Data Storage #####
 
-with open('Collins Scrabble Words (2019).txt') as file:
+with open('Dictionary.txt') as file:
     wordList = file.read().splitlines()
 
 ## Constant letter point values
@@ -77,7 +78,7 @@ def filterRepeats(wordList, letters):
 ## Gets all possible words given provided letters
 def getScrabbleWords(letters):
   if (len(letters)< 7 or len(letters) > 15):
-    raise Exception ('Letter count must be between seven and fifteen.')
+    raise Exception ('Error: Letter count must be between seven and fifteen.');
     
   regex = re.compile('^([' + letters.upper() + '])*$');
   validWords = [];
@@ -92,3 +93,15 @@ def getScrabbleWords(letters):
   for word in validWords[:]:
     validWords[validWords.index(word)] = [word, getWordValue(word)];
   return validWords;
+
+# If run from the console, print results based off arguments
+
+try:
+  if (sys.argv == None or sys.argv[1] == None):
+    raise IndexError;
+  else:
+    results = getScrabbleWords(sys.argv[1]);
+    for index in results:
+      print ('[' + index[0] + ']: ' + str(index[1]) + 'pts');
+except IndexError:
+  print('Error: No argument provided');

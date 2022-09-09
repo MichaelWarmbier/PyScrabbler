@@ -2,26 +2,34 @@
 
 A Python package for retrieving a list of valid words and their values in Scrabble™ given a set of letters [seven to fifteen].
 
-**Important**: Project is still in its pre-release stage.
-
 ## Description
 
 ### Methods
 
-`getScrabbleWords(letters)`:
+```py
+getScrabbleWords(letters)
+```
 
 **Parameter**: _String_; provided letters.<br>
 **Returns**: _2D-List_; words and their base values.<br>
 
 **Exceptions**:<br>
-&emsp;`Error: Letter count must be between seven and fifteen.`: occurs when provided _String_ is less than seven/longer than fifteen characters.
+&emsp;`Error: Letter count must be between seven and fifteen.`: occurs when provided _String_ is less than seven characters OR longer than fifteen characters.<br>
+&emsp;`Error: No argument provided.`: occurs when not provided with an argument.
 
-**Example Use**:
+
+**Example Use In Code**:
 
 ```py
-storedWords = getWords('JUHSINE')
+storedWords = getScrabbleWords('JUHSINE')
 for word in storedWords:
   print(word)
+```
+
+**Example Use In Terminal**:
+
+```bash
+python -m pyscrabbler a,r,t,w,t,x,y,z
 ```
 
 **Example Output**:
@@ -41,8 +49,12 @@ for word in storedWords:
 
 ## Installation
 
-Coming soon!
+With Python installed, run the following in a command prompt:
+
+```bash
+python -m pip install pyscrabbler
+```
 
 ## Legal
 
-This project was developed for educational purposes. I do not own, nor claim to own, anything involving Scrabble™. Scrabble™ is a trademark owned by Hasbro Inc and all rights are reserved to its respective owner.
+This project was developed for educational purposes. I do not own, nor claim to own, anything involving Scrabble™. Scrabble™ is a trademark owned by Hasbro Inc. and all rights are reserved to its respective owner.
